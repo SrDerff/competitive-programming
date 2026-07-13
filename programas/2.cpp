@@ -147,8 +147,6 @@ int main(){
                 break;
             }
             case 8:{
-                
-
                 cout<<"Agrupado por frecuencia:\n";
                 for(auto &x: grp_palabras){
                     cout<<x.first<<": ";
