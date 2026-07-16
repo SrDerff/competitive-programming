@@ -6,5 +6,6 @@ int main(){
     while(cin>>x){
         symbols.push(x);
     }
+    //to do
     return 0;
 }
