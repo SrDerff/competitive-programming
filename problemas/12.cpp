@@ -3,13 +3,15 @@ using namespace std;
 int main(){
     stack<int>symbols;
     int x;
+    bool v=true;
     while(cin>>x){
-        symbols.push(x);
-    }
-    while(!symbols.empty()){
-        cout<<symbols.top();
-        symbols.pop();
-        //todo
+        if(x==')'){
+            if(symbols.empty()){
+                v=false;
+            }else{
+                symbols.pop();
+            }
+        }
     }
     return 0;
 }
