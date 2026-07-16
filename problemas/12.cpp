@@ -9,6 +9,7 @@ int main(){
     while(!symbols.empty()){
         cout<<symbols.top();
         symbols.pop();
+        //todo
     }
     return 0;
 }
