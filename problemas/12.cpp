@@ -6,5 +6,9 @@ int main(){
     while(cin>>x){
         symbols.push(x);
     }
+    while(!symbols.empty()){
+        cout<<symbols.top();
+        symbols.pop();
+    }
     return 0;
 }
