@@ -6,10 +6,12 @@ using ull =  unsigned long long;
 
 int main(){
     ull n;
+    cin>>n;
     for(ull i=1;i<=n;i++){
-        ull size=i*i;
-        ull total_pos = size*(size-1)/2;
-        ull attack_pos = ...;
+        ll size=i*i;
+        ll total_pos = size*(size-1)/2;
+        ll invalid_pos = 4*(i-2)*(i-1);
+        cout<<total_pos-invalid_pos<<"\n";
     }
     return 0;
 }
