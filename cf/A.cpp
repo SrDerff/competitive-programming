@@ -35,7 +35,34 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    
+    ll t;
+    cin>>t;
+    while(t--){
+        ll n,m;
+        cin>>n>>m;
+
+        set<char>lt;
+
+        rep(i,0,n){
+            string s;
+            cin>>s;
+            lt.insert(toupper(s[i]));
+        }
+
+        bool val=true;
+
+        rep(i,0,m){
+            string s;
+            cin>>s;
+            rep(i,0,s.size()){
+                if(!lt.count(s[i])){
+                    val=false;
+                }
+            }
+        }
+
+        cout<<(val?"YES":"NO")<<"\n";
+    }
 
     return 0;
 }
