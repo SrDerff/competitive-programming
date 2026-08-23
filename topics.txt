@@ -1,11 +1,155 @@
-STL
-NUMBER THEORY
-COMBINATORICS
-BACKTRACKING
-BITMASK
+🟢 Nivel 0 — Fundamentos
 
+Antes de meterte fuerte con algoritmos, domina:
 
-TECHINIQUES:
-    - BINARY EXP
-    - TWO POINTERS
-    
+ Complejidad temporal y espacial: O(1), O(log n), O(n), O(n log n), O(n²)
+ Variables, condicionales y ciclos
+ Funciones y recursión básica
+ Arrays/vectores
+ Strings
+ Ordenamiento
+ Búsqueda lineal y binaria
+ set, map, unordered_map
+ Punteros/referencias y manejo de memoria básico
+ Entrada/salida rápida
+
+Objetivo: resolver problemas fáciles sin atascarte en la implementación.
+
+🟡 Nivel 1 — Técnicas básicas
+
+Aquí empieza realmente la programación competitiva.
+
+ Prefix sums
+ Difference arrays
+ Two pointers
+ Sliding window
+ Binary search sobre la respuesta
+ Greedy básico
+ Counting/frecuencias
+ Stack
+ Queue / deque
+ Linked lists
+ Recursión y backtracking básico
+ Bit manipulation
+ GCD / LCM
+ Criba de Eratóstenes
+ Factorización de números
+
+Debes poder reconocer rápidamente:
+
+"Esto parece de dos punteros", "esto es búsqueda binaria sobre la respuesta", etc.
+
+🟠 Nivel 2 — Algoritmos fundamentales
+
+Aquí ya deberías poder resolver problemas de dificultad media.
+
+Grafos
+ BFS
+ DFS
+ Componentes conexas
+ Detección de ciclos
+ Bipartite graphs
+ Topological sort
+ Shortest path en grafos no ponderados
+ Dijkstra
+ DSU / Union-Find
+DP
+ DP 1D
+ DP 2D
+ Knapsack
+ DP sobre subsecuencias
+ Longest Increasing Subsequence
+ DP sobre grids
+ DP con estados
+Matemáticas
+ Modular arithmetic
+ Exponenciación binaria
+ Inversos modulares
+ Combinatoria básica
+ nCr
+ Fibonacci con matrices
+
+🔴 Nivel 3 — Intermedio/avanzado
+
+Aquí empieza el material que suele separar a un competidor intermedio de uno fuerte.
+
+Estructuras de datos
+ Fenwick Tree / BIT
+ Segment Tree
+ Sparse Table
+ Monotonic Stack
+ Monotonic Queue
+ Ordered Set
+ Coordinate Compression
+ Lazy Propagation
+Grafos
+ Bellman-Ford
+ Floyd-Warshall
+ Minimum Spanning Tree
+ Kruskal
+ Prim
+ 0-1 BFS
+ SCC
+ Bridges
+ Articulation points
+ LCA
+ Binary Lifting
+DP avanzada
+ Bitmask DP
+ Tree DP
+ DAG DP
+ Digit DP
+ Interval DP
+ DP con estados complejos
+
+🟣 Nivel 4 — Avanzado
+
+Para problemas difíciles de Codeforces, ICPC, IOI, etc.
+
+Strings
+ KMP
+ Z-function
+ Rolling Hash
+ Trie
+ Aho-Corasick
+ Suffix Array
+ Suffix Automaton
+Grafos avanzados
+ Max Flow
+ Min Cut
+ Dinic
+ Bipartite Matching
+ Heavy-Light Decomposition
+ Centroid Decomposition
+ 2-SAT
+ Euler Tour / Tree Flattening
+DP avanzada
+ Divide & Conquer DP
+ Convex Hull Trick
+ DP optimization
+ Rerooting DP
+ SOS DP
+ Meet in the Middle
+ 
+⚫ Nivel 5 — Olímpico / muy avanzado
+
+No necesitas todo esto para ser muy bueno, pero aparece en problemas de máxima dificultad.
+
+ Suffix automaton avanzado
+ Suffix array avanzado
+ Link-Cut Tree
+ Persistent Segment Tree
+ Persistent data structures
+ Wavelet Tree
+ Min-cost Max-flow
+ FFT / NTT
+ Polynomial multiplication
+ Matrix exponentiation avanzada
+ Generating functions
+ Advanced combinatorics
+ Randomized algorithms
+ Computational geometry avanzada
+ Game theory
+ Sprague-Grundy
+ Mo's algorithm
+ Advanced offline queries
