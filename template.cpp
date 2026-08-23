@@ -32,7 +32,6 @@ using namespace std;
 #define vpll vector<pair<ll,ll>>
 #define pii pair<int,int>
 #define pll pair<ll,ll>
-#define pll pair<ll,ll>
 #define all(x) (x).begin(), (x).end()
 #define MOD 1e9+7
 #define str string
