@@ -40,21 +40,24 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    ll n,q;
+    ll n, q;
     cin>>n>>q;
 
-    vll pref(n+1, 0);
+    vector<vll> pref(n+1, vll(n+1, 0));
     rep(i,1,n+1){
-        ll x;
-        cin>>x;
-        pref[i]=pref[i-1]+x;
+        rep(j,1,n+1){
+            char x;
+            cin>>x;
+            pref[i][j]=pref[i-1][j]+pref[i][j-1]-pref[i-1][j-1];
+            pref[i][j]+=(x=='*');
+        }
     }
 
     rep(i,0,q){
-        ll a, b;
-        cin>>a>>b;
+        pll p1, p2;
+        cin>>p1.first>>p1.second>>p2.first>>p2.second;
 
-        cout<<pref[b]-pref[a-1]<<"\n";
+        cout<<pref[p2.first][p2.second]-pref[p2.first][p1.second-1]-pref[p1.first-1][p2.second]+pref[p1.first-1][p1.second-1]<<"\n";
     }
 
     return 0;

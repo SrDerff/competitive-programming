@@ -43,18 +43,21 @@ int main(){
     ll n,q;
     cin>>n>>q;
 
+    vll pc(n);
+    rep(i,0,n) cin>>pc[i];
+
+    sort(pc.begin(), pc.end());
+
     vll pref(n+1, 0);
     rep(i,1,n+1){
-        ll x;
-        cin>>x;
+        ll x=pc[i-1];
         pref[i]=pref[i-1]+x;
     }
-
+    
     rep(i,0,q){
-        ll a, b;
-        cin>>a>>b;
-
-        cout<<pref[b]-pref[a-1]<<"\n";
+        ll x,y;
+        cin>>x>>y;
+        cout<<pref[n-(x-y)]-pref[n-x]<<"\n";
     }
 
     return 0;

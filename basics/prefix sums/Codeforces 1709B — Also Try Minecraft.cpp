@@ -40,21 +40,34 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    ll n,q;
-    cin>>n>>q;
+    ll n,m;
+    cin>>n>>m;
 
-    vll pref(n+1, 0);
-    rep(i,1,n+1){
-        ll x;
-        cin>>x;
-        pref[i]=pref[i-1]+x;
+    vll twr(n);
+    rep(i,0,n) cin>>twr[i];
+
+    vll prefForward(n+1, 0);
+    vll prefBackward(n+1, 0);
+    rep(i,2,n+1){
+        prefForward[i]=prefForward[i-1];
+        prefBackward[i]=prefBackward[i-1];
+        if(twr[i-1]<twr[i-2]){
+            prefForward[i]+=abs(twr[i-2]-twr[i-1]);
+        }else{
+            prefBackward[i]+=abs(twr[i-2]-twr[i-1]);
+        }
     }
 
-    rep(i,0,q){
-        ll a, b;
-        cin>>a>>b;
+    rep(i,0,m){
+        ll s,t;
+        cin>>s>>t;
 
-        cout<<pref[b]-pref[a-1]<<"\n";
+        if(s<t){
+            cout<<prefForward[t]-prefForward[s]<<"\n";
+        }else{
+            cout<<prefBackward[s]-prefBackward[t]<<"\n";
+        }
+        
     }
 
     return 0;

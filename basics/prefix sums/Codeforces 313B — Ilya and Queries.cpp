@@ -40,21 +40,24 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    ll n,q;
-    cin>>n>>q;
+    string s;
+    cin>>s;
+
+    ll n=sz(s);
 
     vll pref(n+1, 0);
-    rep(i,1,n+1){
-        ll x;
-        cin>>x;
-        pref[i]=pref[i-1]+x;
+    rep(i, 2, n+1){
+        pref[i]=pref[i-1];
+        if(s[i-1]==s[i-2]) pref[i]++;
     }
 
-    rep(i,0,q){
+    ll q;
+    cin>>q;
+    
+    while(q--){
         ll a, b;
         cin>>a>>b;
-
-        cout<<pref[b]-pref[a-1]<<"\n";
+        cout<<pref[b]-pref[a]<<"\n";
     }
 
     return 0;
