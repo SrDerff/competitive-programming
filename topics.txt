@@ -19,6 +19,7 @@ Objetivo: resolver problemas fáciles sin atascarte en la implementación.
 
 Aquí empieza realmente la programación competitiva.
 
+ Kadane
  Prefix sums
  Difference arrays
  Two pointers
