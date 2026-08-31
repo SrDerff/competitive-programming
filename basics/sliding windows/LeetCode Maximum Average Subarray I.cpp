@@ -1,47 +1,25 @@
-/*
- ⡴⠑⡄⠀⠀⠀⠀⠀⠀⠀  ⣀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
-⠸⡇⠀⠿⡀⠀⠀⠀⣀⡴⢿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
-⠀⠀⠀⠀⠑⢄⣠⠾⠁⣀⣄⡈⠙⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀ 
-⠀⠀⠀⠀⢀⡀⠁⠀⠀⠈⠙⠛⠂⠈⣿⣿⣿⣿⣿⠿⡿⢿⣆⠀⠀⠀⠀⠀⠀⠀ 
-⠀⠀⠀⢀⡾⣁⣀⠀⠴⠂⠙⣗⡀⠀⢻⣿⣿⠭⢤⣴⣦⣤⣹⠀⠀⠀  ⢀⢴⣶⣆ 
-⠀⠀⢀⣾⣿⣿⣿⣷⣮⣽⣾⣿⣥⣴⣿⣿⡿⢂⠔⢚⡿⢿⣿⣦⣴⣾⠁⠸⣼⡿ 
-⠀⢀⡞⠁⠙⠻⠿⠟⠉⠀⠛⢹⣿⣿⣿⣿⣿⣌⢤⣼⣿⣾⣿⡟⠉⠀⠀⠀⠀⠀ 
-⠀⣾⣷⣶⠇⠀⠀⣤⣄⣀⡀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
-⠀⠉⠈⠉⠀⠀⢦⡈⢻⣿⣿⣿⣶⣶⣶⣶⣤⣽⡹⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
-⠀⠀⠀⠀⠀⠀ ⠀⠉⠲⣽⡻⢿⣿⣿⣿⣿⣿⣿⣷⣜⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
-⠀⠀⠀⠀⠀⠀⠀⠀ ⢸⣿⣿⣷⣶⣮⣭⣽⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀ 
-⠀⠀⠀⠀⠀⠀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀ 
-⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀ 
-⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉ 
-
-        Vuelve emi
-*/
-
-
 #include <bits/stdc++.h>
+#define ll long long
 using namespace std;
 
-#define ll long long
-#define ull unsigned long long
-#define sz(x) (ll)(x).size()
-#define rep(i, a, b) for (ll i=(a); i<(b); i++)
-#define vin vector<int>
-#define vll vector<ll>
-#define vch vector<char>
-#define vpii vector<pair<int,int>>
-#define vpll vector<pair<ll,ll>>
-#define pii pair<int,int>
-#define pll pair<ll,ll>
-#define all(x) (x).begin(), (x).end()
-#define MOD 1e9+7
-#define str string
+class Solution {
+public:
+    double findMaxAverage(vector<int>& nums, int k) {
+        ll n=nums.size();
 
-int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+        double curr_sum=0;
+        for(int i=0;i<k;i++){
+            curr_sum+=nums[i];
+        }
+        double max_sum=curr_sum;
 
-    
+        for(int i=1;i<n-(k-1);i++){
+            curr_sum-=nums[i-1];
+            curr_sum+=nums[i+k-1];
 
-    return 0;
-}
+            max_sum=max(curr_sum, max_sum);
+        }
+
+        return max_sum/k;
+    }
+};
