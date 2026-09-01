@@ -2,6 +2,8 @@
 #define ll long long
 using namespace std;
 
+// TRICKY
+
 class Solution {
 public:
     int maxVowels(string s, int k) {
