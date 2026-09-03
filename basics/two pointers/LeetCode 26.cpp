@@ -4,6 +4,7 @@ using namespace std;
 
 class Solution {
 public:
+    //o(n) memory
     int xremoveDuplicates(vector<int>& nums) {
         map<int,int>frq;
         int n=nums.size();
@@ -17,6 +18,7 @@ public:
         return frq.size();
     }
 
+    //o(1) memory
     int removeDuplicates(vector<int>& nums) {
         int slow=0;
         int n=nums.size();
