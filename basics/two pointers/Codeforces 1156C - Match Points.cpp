@@ -42,28 +42,32 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    ll n, x;
-    cin>>n>>x;
+    ll n,z;
+    cin>>n>>z;
 
-    vll v(n);
-    rep(i,0,n) cin>>v[i];
+    vll nums(n);
+    rep(i,0,n) cin>>nums[i];
 
-    sort(v.rbegin(), v.rend());
+    sort(nums.begin(), nums.end());
 
-    ll i=0,j=n-1;
+    ll slow=0;
     ll cnt=0;
 
-    while(i<j){
-        ll dff=abs(v[i]-v[j]);
-        if(dff>=x){
-            cnt++;
-            i++;
-            j--;
-        }else if(dff<x){
-            
-        }
+    vbl used(n, 0);
 
+    rep(j,n/2,n){
+        while(used[slow]){
+            slow++;
+        }
+        if(slow>=n) break;
+        if(abs(nums[slow]-nums[j])>=z){
+            used[slow++]=1;
+            used[j]=1;
+            cnt++;
+        }
     }
+
+    cout<<cnt;
 
     return 0;
 }
