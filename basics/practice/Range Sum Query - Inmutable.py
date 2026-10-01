@@ -6,7 +6,7 @@ class NumArray:
             self.pref[i]+=self.pref[i-1]+nums[i-1]
 
     def sumRange(self, left: int, right: int) -> int:
-        return self.pref[right]-self.pref[left-1]
+        return self.pref[right-1]-self.pref[left-2]
 
 
 # Your NumArray object will be instantiated and called as such:
