@@ -17,6 +17,8 @@ using namespace std;
 #define MOD 1e9+7
 #define str string
 
+//ya no lo uso xd
+
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
