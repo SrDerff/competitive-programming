@@ -15,8 +15,18 @@ long long solve_memo(long long cl, long long n){
 
     if(dp[cl]!=-1) return dp[cl];
 
-    dp[cl]=solve_memo(cl+1, n)+solve_memo(cl+2, n)+solve_memo(cl+3, n);
+    dp[cl]=solve_memo(cl+1, n)+solve_memo(cl+2, n);
     return dp[cl];
+}
+
+long long solve_tab(long long n){
+    vector<long long>dptab(n+1);
+    dptab[0]=1;
+    dptab[1]=1;
+    for(long long i=2;i<=n;i++){
+        dptab[i]=dptab[i-1]+dptab[i-2];
+    }
+    return dptab[n];
 }
 
 #include <bits/stdc++.h>
@@ -27,6 +37,8 @@ int main(){
     long long n;
     cin>>n;
     dp.assign(n+1, -1);
-    cout<<solve_memo(0,n);
+    cout<<solve_memo(0,n)<<"\n";
+    cout<<solve_tab(n)<<"\n";
+
     return 0;
 }
