@@ -9,7 +9,7 @@ char findd(char crr, char a, char b, char c, char d){
             return x;
         }
     }
-    return 'A';
+    return ;
 }
 
 int main(){
