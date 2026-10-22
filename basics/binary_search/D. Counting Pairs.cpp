@@ -16,16 +16,16 @@ int main(){
         for(ll i=0;i<n-1;i++){
             ll prev=v[i];
             ll p1=i+1,p2=n-1;
-            ll start=0;
-            ll end=n;
+            ll start=i;
+            ll end=i;
             while(p1<=p2){
                 ll mid=(p1+p2)/2;
                 ll sb=v[mid];
                 if(sm-sb-prev>=x){
                     start=mid;
-                    p2=mid-1;
-                }else{
                     p1=mid+1;
+                }else{
+                    p2=mid-1;
                 }
             }
             p1=i+1,p2=n-1;
@@ -34,14 +34,14 @@ int main(){
                 ll sb=v[mid];
                 if(sm-sb-prev>y){
                     end=mid;
-                    p2=mid-1;
-                }
-                else{
                     p1=mid+1;
                 }
+                else{
+                    p2=mid-1;
+                }
             }
-            if(start!=-1 && end>=start)
-                ans+=(end-start);
+            if(start!=-1)
+                ans+=(start-end);
         }
         cout<<ans<<"\n";
     }
