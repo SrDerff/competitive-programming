@@ -28,6 +28,7 @@ Aquí empieza realmente la programación competitiva.
  Greedy básico
  Counting/frecuencias
  Stack
+ Monotonic Stack
  Queue / deque
  Linked lists
  Recursión y backtracking básico
